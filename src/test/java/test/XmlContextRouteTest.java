@@ -18,7 +18,7 @@ import org.springframework.test.context.ContextConfiguration;
 @MockEndpoints("file:*")
 @RunWith(CamelSpringJUnit4ClassRunner.class)
 @BootstrapWith(CamelTestContextBootstrapper.class)
-public class CamelRouteBuilderTest {
+public class XmlContextRouteTest {
 
   @Autowired
   private CamelContext context;
@@ -30,8 +30,8 @@ public class CamelRouteBuilderTest {
   private MockEndpoint mock;
 
   @Test
-  public void test() throws Exception {
-    mock.expectedMessageCount(1);
+  public void testXmlContextRoute() throws Exception {
+    mock.expectedBodiesReceived("Hello world Lukasito!");
 
     template.sendBody("Lukasito");
 

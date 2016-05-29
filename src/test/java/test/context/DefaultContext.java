@@ -14,8 +14,8 @@ public class DefaultContext extends SingleRouteCamelConfiguration {
       @Override
       public void configure() throws Exception {
         from("direct:something")
-          .setBody(simple("helloworld ${body}"))
-          .to("file://C:/out");
+          .setBody(simple("Hello world ${body}!"))
+          .to("file://out?fileName=asdf");
       }
     };
   }
